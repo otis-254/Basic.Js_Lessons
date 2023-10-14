@@ -738,17 +738,38 @@
 
 // Filtering arrays (Removes all the-ve vlaues and only retains +ve ones)
 // -----------------------------
-const numbers = [2, 4, 6, -1, -5, 3,];
-// const filtered = numbers.filter(function (value) {
-//     return value >= 0;
-// });
+// const numbers = [2, 4, 6, -1, -5, 3,];
+// // const filtered = numbers.filter(function (value) {
+// //     return value >= 0;
+// // });
 
 
-// Second simplified method (n stands for the value)
-const filtered = numbers.filter(n => n >= 0);
-console.log(filtered)
+// // Second simplified method (n stands for the value)
+// const filtered = numbers.filter(n => n >= 0);
+// console.log(filtered)
 
 // ---------------------------
 // Mapping An Array
 
+// const numbers = arrayFromRange(-11, -5);
+// console.log(numbers);
 
+// function arrayFromRange(min, max) {
+//     const output = [];
+//     for (let i = min; i <= max; i++)
+//         output.push(i);
+//     return output;
+// }
+
+
+
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+console.log(includes(numbers, 5));
+
+
+function includes(array, searchElement) {
+    for (let element of array)
+        if (element === searchElement)
+            return true;
+    return false;
+}
