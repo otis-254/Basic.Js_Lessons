@@ -763,13 +763,109 @@
 
 
 
-const numbers = [1, 2, 3, 4, 5, 6, 7]
-console.log(includes(numbers, 5));
+// const numbers = [1, 2, 3, 4, 5, 6, 7]
+// console.log(includes(numbers, 5));
 
 
-function includes(array, searchElement) {
-    for (let element of array)
-        if (element === searchElement)
-            return true;
-    return false;
+// function includes(array, searchElement) {
+//     for (let element of array)
+//         if (element === searchElement)
+//             return true;
+//     return false;
+// }
+
+// Function decoration
+// function walk() {
+//     console.log('Walk');
+// }
+
+// Arguments
+// function sum() {
+//     let total = 0;
+//     for (let value of arguments)
+//         total += value;
+//     console.log(arguments);
+//     return total;
+// }
+
+// console.log(sum(1, 2, 3, 4, 5, 10))
+
+
+// REST OPERATOR
+// function sum(...args) {
+//     let total = 0;
+
+//     return args.reduce((a, b) => a + b);
+// }
+
+
+// REST with 2 parametors
+
+// function sum(discount, ...price) {
+//     const total = price.reduce((a, b) => a + b);
+//     return total * (1 - discount);
+// }
+
+// console.log(sum(0.1, 20, 30))
+
+// // Default Params
+// function interest(principal, rate = 3.5, year = 5) {
+//     return principal * rate / 100 * year;
+// }
+// console.log(interest(10000));
+
+
+
+// Move elements in an array to a new positions This is a function that performs that task!
+function moveArrayElement(arr, fromIndex, toIndex) {
+    if (
+        fromIndex < 0 ||
+        fromIndex >= arr.length ||
+        toIndex < 0 ||
+        toIndex >= arr.length
+    ) {
+        console.error("Invalid index");
+        return arr; // Return the original array if indices are out of bounds.
+    }
+
+    // Remove the element from the current position.
+    const elementToMove = arr.splice(fromIndex, 1)[0];
+
+    // Insert the element into the new position.
+    arr.splice(toIndex, 0, elementToMove);
+
+    return arr; // Return the modified array.
+}
+
+// Example usage:
+// const myArray = [1, 2, 3, 4, 5, 6, 7, 10];
+// moveArrayElement(myArray, 5, 0);
+// console.log(myArray); // Output...
+
+
+
+// const numbers = [1, 2, 3, 4,];
+// const count = countOccurences(numbers, -1);
+
+// console.log(count);
+
+// function countOccurences(array, searchElement) {
+
+// }
+
+
+
+// Exercise- Count the occurances in an array
+const numbers = [1, 2, 3, 4, 4, 4];
+
+const count = countOccurrences(numbers, 4);
+console.log(count);
+
+function countOccurrences(array, searchElement) {
+    return array.reduce((count, currentElement) => {
+        if (currentElement === searchElement) {
+            return count + 1;
+        };
+        return count;
+    }, 0);
 }
